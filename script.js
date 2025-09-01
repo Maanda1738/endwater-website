@@ -18,7 +18,46 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM Content Loaded!');
     initializeDOMElements();
     setupEventListeners();
+    setupLogoFallback();
 });
+
+// Setup logo fallback
+function setupLogoFallback() {
+    const logoImages = document.querySelectorAll('.logo-img, .hero-logo, .footer-logo');
+    
+    logoImages.forEach(img => {
+        img.addEventListener('error', function() {
+            console.log('Logo failed to load, setting up fallback');
+            
+            // Create a stylized text logo as fallback
+            const logoContainer = this.parentElement;
+            this.style.display = 'none';
+            
+            if (!logoContainer.querySelector('.text-logo-fallback')) {
+                const textLogo = document.createElement('div');
+                textLogo.className = 'text-logo-fallback';
+                textLogo.innerHTML = '💧 END WATER';
+                textLogo.style.cssText = `
+                    font-weight: bold;
+                    font-size: 1.5rem;
+                    color: #1a237e;
+                    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+                    background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+                    padding: 8px 16px;
+                    border-radius: 12px;
+                    border: 2px solid #1a237e;
+                    box-shadow: 0 4px 12px rgba(26, 35, 126, 0.3);
+                `;
+                logoContainer.appendChild(textLogo);
+            }
+        });
+        
+        // Test if image loads properly
+        if (img.complete && img.naturalWidth === 0) {
+            img.dispatchEvent(new Event('error'));
+        }
+    });
+}
 
 function initializeDOMElements() {
     cartModal = document.getElementById('cartModal');

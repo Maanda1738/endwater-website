@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>END WATER - Premium Still Water Solutions</title>
+    <meta name="description" content="END WATER - Premium still water supplier in Shayandima. Quality 500ml, 1.5L, 5L, and 10L still water bottles at competitive prices. Call 063 753 0316">
+    <meta name="keywords" content="still water, bottled water, Shayandima, water supplier, premium water, END WATER, bulk water">
+    <meta name="author" content="END WATER">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="page-loader" id="pageLoader">
+        <div class="water-drops">
+            <div class="drop"></div>
+            <div class="drop"></div>
+            <div class="drop"></div>
+            <div class="drop"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/endwater-logo.jpg" alt="END WATER Logo" class="logo-img">
+                <span class="logo-text">END WATER 💧</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button id="cart-btn" class="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count" class="cart-count">0</span>
+                </button>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">END WATER 💧</h1>
+                <p class="hero-subtitle">The art of hydration perfected</p>
+                <p class="hero-description">Your trusted water supplier in Shayandima. Delivering pure, clean, and refreshing still water for homes, offices, and businesses. Quality you can taste, service you can trust.</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>100%</h3>
+                        <p>Pure Still Water</p>
+                    </div>
+                    <div class="stat">
+                        <h3>24/7</h3>
+                        <p>Order Service</p>
+                    </div>
+                    <div class="stat">
+                        <h3>Fast</h3>
+                        <p>Delivery</p>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="scrollToSection('products')">
+                        <i class="fas fa-shopping-cart"></i>
+                        Order Now
+                    </button>
+                    <button class="btn-secondary" onclick="openWhatsAppDirect()">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp: 063 753 0316
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/endwater-logo.jpg" alt="END WATER Logo" class="hero-logo">
+            </div>
+        </div>
+        <div class="water-animation"></div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Premium Water Products</h2>
+                <p>Choose from our range of premium still water bottles, perfect for every occasion</p>
+            </div>
+            <div class="products-grid">
+                <!-- 500ml Still Water -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/500ml-bottles.jpg" alt="500ml Still Water - 24 Pack">
+                        <div class="product-badge">Popular</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>500ml Still Water</h3>
+                        <p class="product-desc">Perfect for on-the-go hydration. Premium quality in convenient size.</p>
+                        <div class="product-details">
+                            <span class="pack-size">24 Bottles per pack</span>
+                            <span class="volume">500ml each</span>
+                        </div>
+                        <div class="product-price">R108.00</div>
+                        <div class="product-actions">
+                            <div class="quantity-control">
+                                <button onclick="changeQuantity('500ml', -1)">-</button>
+                                <span id="qty-500ml">1</span>
+                                <button onclick="changeQuantity('500ml', 1)">+</button>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart('500ml Still Water (24 bottles)', 108.00, '500ml')">
+                                <i class="fas fa-cart-plus"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1.5L Still Water -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/1.5liter-bottles.jpg" alt="1.5L Still Water - 12 Pack">
+                        <div class="product-badge">Family Size</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>1.5L Still Water</h3>
+                        <p class="product-desc">Ideal family size for home and office use. Great value for money.</p>
+                        <div class="product-details">
+                            <span class="pack-size">12 Bottles per pack</span>
+                            <span class="volume">1.5L each</span>
+                        </div>
+                        <div class="product-price">R95.00</div>
+                        <div class="product-actions">
+                            <div class="quantity-control">
+                                <button onclick="changeQuantity('1.5L', -1)">-</button>
+                                <span id="qty-1.5L">1</span>
+                                <button onclick="changeQuantity('1.5L', 1)">+</button>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart('1.5L Still Water (12 bottles)', 95.00, '1.5L')">
+                                <i class="fas fa-cart-plus"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5L Still Water -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/5liter-bottles.jpg" alt="5L Still Water - 4 Pack">
+                        <div class="product-badge">Bulk Size</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>5L Still Water</h3>
+                        <p class="product-desc">Perfect for offices, events, and large families. Economic bulk option.</p>
+                        <div class="product-details">
+                            <span class="pack-size">4 Bottles per pack</span>
+                            <span class="volume">5L each</span>
+                        </div>
+                        <div class="product-price">R60.00</div>
+                        <div class="product-actions">
+                            <div class="quantity-control">
+                                <button onclick="changeQuantity('5L', -1)">-</button>
+                                <span id="qty-5L">1</span>
+                                <button onclick="changeQuantity('5L', 1)">+</button>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart('5L Still Water (4 bottles)', 60.00, '5L')">
+                                <i class="fas fa-cart-plus"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10L Still Water -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/5liter-bottles.jpg" alt="10L Still Water - 4 Pack">
+                        <div class="product-badge">Commercial</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>10L Still Water</h3>
+                        <p class="product-desc">Commercial grade for businesses, restaurants, and bulk consumption.</p>
+                        <div class="product-details">
+                            <span class="pack-size">4 Bottles per pack</span>
+                            <span class="volume">10L each</span>
+                        </div>
+                        <div class="product-price">R90.00</div>
+                        <div class="product-actions">
+                            <div class="quantity-control">
+                                <button onclick="changeQuantity('10L', -1)">-</button>
+                                <span id="qty-10L">1</span>
+                                <button onclick="changeQuantity('10L', 1)">+</button>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart('10L Still Water (4 bottles)', 90.00, '10L')">
+                                <i class="fas fa-cart-plus"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About END WATER</h2>
+                    <p>At END WATER, we believe that access to pure, clean water shouldn't be a luxury. Our mission is to provide premium quality water that meets the highest standards of purity and taste.</p>
+                    <p>Every drop of END WATER goes through rigorous purification processes to ensure you get nothing but the best. From our state-of-the-art facilities to your doorstep, we maintain the highest quality standards.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-tint"></i>
+                            <h4>Pure & Clean</h4>
+                            <p>Advanced filtration technology</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-truck"></i>
+                            <h4>Fast Delivery</h4>
+                            <p>Quick and reliable service</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-award"></i>
+                            <h4>Quality Assured</h4>
+                            <p>Certified and tested</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="images/luxe-logo.jpg" alt="LUXE Quality" class="luxe-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Have questions? We'd love to hear from you!</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Our Location</h4>
+                            <p><a href="https://www.google.com/maps/search/?api=1&query=NO.+65,+4T1+STREET+SHAYANDIMA+0951" target="_blank" class="location-link">
+                                NO. 65, 4T1 STREET<br>SHAYANDIMA 0951<br>Limpopo Province
+                            </a></p>
+                            <small>Click to open in Google Maps</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p><a href="tel:0637530316">063 753 0316</a></p>
+                            <small>Available 24/7 for orders and inquiries</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp Order</h4>
+                            <p><a href="https://wa.me/27637530316">063 753 0316</a></p>
+                            <small>Quick and easy ordering via WhatsApp</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p><a href="mailto:ngohoramavhoya2@gmail.com">ngohoramavhoya2@gmail.com</a></p>
+                            <small>Send us your inquiries and feedback</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Service Hours</h4>
+                            <p>Monday - Sunday: 24/7<br>Emergency delivery available</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <p class="form-subtitle">Fill out the form below and we'll get back to you soon!</p>
+                    <form onsubmit="sendContactMessage(event)">
+                    <div class="form-group">
+                        <input type="text" id="contactName" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="contactEmail" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="contactMessage" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Send via Email
+                    </button>
+                    </form>
+                </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Shopping Cart</h3>
+                <button class="close-cart" onclick="closeCart()">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <p class="empty-cart">Your cart is empty</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Total: R<span id="cartTotal">0.00</span></strong>
+                </div>
+                
+                <!-- Customer Details Form -->
+                <div class="customer-details">
+                    <div class="form-group">
+                        <input type="text" id="customerName" placeholder="Your Name (Optional)" class="cart-input">
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="customerPhone" placeholder="Your Phone (Optional)" class="cart-input">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="orderNotes" placeholder="Special requests or notes (Optional)" rows="2" class="cart-input"></textarea>
+                    </div>
+                </div>
+                
+                <!-- Delivery Options -->
+                <div class="delivery-section">
+                    <div class="delivery-option">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="needDelivery" onchange="toggleDeliveryAddress()">
+                            <span class="checkmark"></span>
+                            I need delivery
+                        </label>
+                    </div>
+                    
+                    <div id="deliveryAddressSection" class="delivery-address" style="display: none;">
+                        <div class="form-group">
+                            <textarea id="deliveryAddress" placeholder="Enter your delivery address..." rows="3" class="cart-input"></textarea>
+                        </div>
+                        <small class="delivery-note">💡 Delivery charges may apply based on location</small>
+                    </div>
+                    
+                    <div class="collection-info">
+                        <small><strong>Collection Address:</strong> NO. 65, 4T1 STREET, SHAYANDIMA 0951</small>
+                    </div>
+                </div>
+                
+                <button class="checkout-btn" onclick="checkout()">
+                    <i class="fab fa-whatsapp"></i>
+                    Order via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="images/endwater-logo.jpg" alt="END WATER" class="footer-logo">
+                    <p>The art of hydration perfected</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 
+                            <a href="https://www.google.com/maps/search/?api=1&query=NO.+65,+4T1+STREET+SHAYANDIMA+0951" target="_blank" class="location-link">
+                                NO. 65, 4T1 STREET, SHAYANDIMA 0951
+                            </a>
+                        </li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:0637530316">063 753 0316</a></li>
+                        <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/27637530316">WhatsApp: 063 753 0316</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:ngohoramavhoya2@gmail.com">ngohoramavhoya2@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> 24/7 Service Available</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 END WATER. All rights reserved. | Premium Still Water Supplier in Shayandima</p>
+                <p class="developer-credit">Designed with ❤️ by <strong>Maanda Netshisumbewa</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

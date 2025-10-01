@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://endwater.co.za/sitemap.xml
+
+# Allow all search engines to crawl the entire site
+Crawl-delay: 1
+
+# Block crawling of admin or private areas (none in this case)
+# Disallow: /admin/
+
+# Important pages for indexing
+Allow: /index.html
+Allow: /images/
+Allow: /styles.css
+Allow: /script.js
